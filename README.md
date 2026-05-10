@@ -26,7 +26,7 @@ from scripts import fix_marks, remove_chastisements, create_commendation, studen
 
 ```python
 from datacenter.models import Schoolkid
-child = Schoolkid.objects.get(full_name__icontains='Фролов Иван')
+child = Schoolkid.objects.get(full_name__icontains='Имя ученика')
 
 fix_marks(child)
 ```
@@ -40,10 +40,10 @@ remove_chastisements(child)
 
 ### 3. Добавление похвалы
 Находит последний урок по указанному предмету и добавляет случайную похвалу от учителя.
-Функция защищена: если ученик не найден или их несколько (например, "Степан"), скрипт сообщит об ошибке.
+Функция защищена: если ученик не найден или их несколько (например, "Степан"), для правильного поиска используйте функцию `student_check`.
 
 ```python
-create_commendation('Фролов Иван', 'Математика')
+create_commendation(сhild, 'Нужный урок')
 ```
 
 ## Цели проекта
