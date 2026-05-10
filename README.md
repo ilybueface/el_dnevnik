@@ -18,7 +18,7 @@ python manage.py shell
 Затем импортируйте функции:
 
 ```python
-from scripts import fix_marks, remove_chastisements, create_commendation
+from scripts import fix_marks, remove_chastisements, create_commendation, student_check
 ```
 
 ### 1. Исправление оценок
