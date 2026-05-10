@@ -49,9 +49,6 @@ def student_check(name):
         raise SchoolkidSearchError("Найдено слишком много людей")
 
 
-schoolkid = Schoolkid.objects.all()[0]
-
-
 def fix_marks(schoolkid):
     count = schoolkid.mark_set.filter(points__in=[2, 3]).update(points=5)
     return count
@@ -61,7 +58,7 @@ def remove_chastisements(schoolkid):
     schoolkid.chastisement_set.all().delete()
 
 
-def create_commendation(subject_title):
+def create_commendation(schoolkid, subject_title):
 
     lesson = (Lesson.objects.filter(
         year_of_study=schoolkid.year_of_study,
